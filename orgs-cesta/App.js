@@ -10,6 +10,8 @@ import {
   Montserrat_700Bold
 } from '@expo-google-fonts/montserrat';
 
+import AppLoading from 'expo-app-loading';
+
 export default function App() {
   const [fonteCarregada] = useFonts({
     "MontserratRegular": Montserrat_400Regular,
@@ -17,11 +19,11 @@ export default function App() {
   });
 
   if(!fonteCarregada) {
-    return <View />
+    return <AppLoading />
   }
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ flex: 1}}>
       <StatusBar />
       <Cesta {...mock} />
     </SafeAreaView>
